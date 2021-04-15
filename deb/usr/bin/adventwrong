@@ -1,0 +1,4 @@
+
+set -e
+
+exec "python3 /opt/adventwrong/main.py"
