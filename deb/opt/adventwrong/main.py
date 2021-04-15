@@ -1,4 +1,8 @@
 from adventurelib import *
+import time
+
+player_name = "Player"
+
 
 white_void = Room('You are in some kind of void. You don\'t feel great. The void feels cold and uncomfortable') #the totally real start of the game
 
@@ -27,6 +31,8 @@ gate = Room("This is the gate. Two guards are here")
 END STARTER ROOMS
 '''
 
+south_anamoklea = Room("You are in the south Anamoklea. You see passages in all directions.")
+
 forest = Room("You are now lost in a forest")
 magic_forest = Room("You are now lost in a forest") # you are now lost in a magic forest
 magic_elf_forest = Room("You are now lost in a magically amazing forest")
@@ -34,6 +40,16 @@ magic_elf_forest = Room("You are now lost in a magically amazing forest")
 magic_clearing = Room("You are in a clearing. You see a chest.")
 
 magic_cave_start = Room("You are in a cave that most likely you entered through a chest. Any light source that is here fades.")
+
+'''
+ITEMS
+'''
+
+heels = Item("A pair of shoes with heels", "heels")
+
+ax = Item("An axe with acient gravings on it", "Axe")
+
+
 
 Room.can_scream = True
 
@@ -97,6 +113,36 @@ gate.south = bridge
 current_room = white_void # bruh, why would i start a game in a place like zork, full of clues.
 
 
+'''
+FUNCTIONS
+'''
+
+'''
+SYSTEM FUNCTIONS
+'''
+
+def exec_process():
+    global current_room, player_name
+    if current_room == gate:
+        say("Guard 1: Hello, stranger, we need a few checks before you can pass.")
+        time.sleep(3)
+        say("You look supspicious.")
+        time.sleep(1)
+        say("What is your name?")
+        player_name = input("Enter your name: ")
+        time.sleep(2)
+        say(f"Oh, I see, {player_name}, you can enter. You do not look supspicious now.")
+        time.sleep(4)
+        current_room = south_anamoklea
+        say("You enter the gate as it shuts behind you.")
+        time.sleep(2)
+        look()
+    
+
+'''
+@WHEN Functions
+'''
+
 @when('go DIRECTION') # how did you expect me to make the guy move? Probably not using the queen's carriage...
 def go(direction):
     global current_room
@@ -116,6 +162,7 @@ def go(direction):
 def look():
     global current_room
     say(current_room)
+    exec_process()
 
 @when('scream')
 @when('cry')
