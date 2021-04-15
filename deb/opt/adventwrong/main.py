@@ -50,6 +50,7 @@ white_void.west = white_void_alt
 
 road_start.north = magic_forest
 road_start.south = forest
+road_start.east = road_segment1
 
 forest.south = forest #so sad, no escape you are lost...
 forest.north = road_start #or maybe not
@@ -67,6 +68,31 @@ magic_clearing.east = forest
 magic_clearing.west = forest
 magic_clearing.down = magic_cave_start
 
+
+road_segment1.west = road_start
+road_segment1.east = road_segment2
+
+road_segment2.west = road_segment1
+road_segment2.east = road_segment3
+
+road_segment3.west = road_segment2
+road_segment3.east = road_segment4
+
+road_segment4.west = road_segment3
+road_segment4.east = road_segment5
+
+road_segment5.west = road_segment4
+road_segment5.east = bridge
+road_segment5.north = bridge
+
+bridge.south = road_segment5
+bridge.north = gate
+
+gate.south = bridge
+
+
+
+
 current_room = white_void # bruh, why would i start a game in a place like zork, full of clues.
 
 
@@ -77,7 +103,7 @@ def go(direction):
         current_room = current_room.north
     elif current_room.west and direction in ['w','wes','west','right']:
         current_room = current_room.west
-    elif current_room.west and direction in ['e','eas','east','left']:
+    elif current_room.east and direction in ['e','eas','east','left']:
         current_room = current_room.east
     elif current_room.south and direction in ['s','sou','south','back']:
         current_room = current_room.south
