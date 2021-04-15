@@ -52,10 +52,6 @@ road_start.north = magic_forest
 road_start.south = forest
 road_start.east = road_segment1
 
-forest.south = forest #so sad, no escape you are lost...
-forest.north = road_start #or maybe not
-forest.east = forest
-forest.west = forest
 
 magic_forest.south = road_start
 magic_forest.north = magic_clearing
@@ -87,6 +83,11 @@ road_segment5.north = bridge
 
 bridge.south = road_segment5
 bridge.north = gate
+
+forest.south = forest #so sad, no escape you are lost...
+forest.north = road_start #or maybe not
+forest.east = forest
+forest.west = forest
 
 gate.south = bridge
 
