@@ -12,10 +12,10 @@
 - [ ] Save/load system
 - [ ] A normal ending 
 ### Downloads
-- [Lastest (linux DEB)](/adventbutwrongv0.0.3prebeta.deb)
-- [Stable (linux DEB)](/adventbutwrongv0.0.3prebeta.deb)
+- [Lastest (linux DEB)](/AdventButWrong/adventbutwrongv0.0.3prebeta.deb)
+- [Stable (linux DEB)](/AdventButWrong/adventbutwrongv0.0.3prebeta.deb)
 - [Source code (ZIP)](https://github.com/leha-code/AdventButWrong/archive/refs/heads/main.zip)
-- [Map (JPG)](/AdventButWrong_map.jpg)
+- [Map (JPG)](AdventButWrong//AdventButWrong_map.jpg)
 ## Repository install (Linux Debian, Raspbian, TwisterOS, and Ubuntu ONLY:
 1. `curl -s https://packagecloud.io/install/repositories/LEHAtupointow/txtadvent/script.deb.sh | sudo bash`
 2. `sudo apt install adventbutwrong`
