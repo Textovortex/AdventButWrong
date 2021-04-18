@@ -1,5 +1,16 @@
 # AdventButWrong
 ## A text adventure with a twist
+### Progress
+- [x] Starter rooms
+- [x] Interaction system
+- [x] Additional things
+- [ ] Complete story
+- [ ] Further rooms
+- [ ] Characters
+- [ ] Items
+- [ ] Commands
+- [ ] Save/load system
+- [ ] A normal ending 
 ### Downloads
 - [Lastest (linux DEB)](/adventbutwrongv0.0.3prebeta.deb)
 - [Stable (linux DEB)](/adventbutwrongv0.0.3prebeta.deb)
