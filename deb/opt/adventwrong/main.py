@@ -1,8 +1,10 @@
-from adventurelib import *
+from adstrangerlib import *
+from adventxtend import *
 import time
 
-player_name = "Player"
+player_name = "Player" # yeah, thats a thing...
 
+player = Player(player_name, 20, 5, ("hit", "punch"), 100, 1)
 
 white_void = Room('You are in some kind of void. You don\'t feel great. The void feels cold and uncomfortable') #the totally real start of the game
 
@@ -101,7 +103,7 @@ bridge.south = road_segment5
 bridge.north = gate
 
 forest.south = forest #so sad, no escape you are lost...
-forest.north = road_start #or maybe not
+forest.north = forest
 forest.east = forest
 forest.west = forest
 
@@ -129,9 +131,9 @@ def exec_process():
         say("You look supspicious.")
         time.sleep(1)
         say("What is your name?")
-        player_name = input("Enter your name: ")
+        player_name = player.name = input("Enter your name: ")
         time.sleep(2)
-        say(f"Oh, I see, {player_name}, you can enter. You do not look supspicious now.")
+        say(f"Oh, I see, {player.name}, you can enter. You do not look supspicious now.")
         time.sleep(4)
         current_room = south_anamoklea
         say("You enter the gate as it shuts behind you.")
