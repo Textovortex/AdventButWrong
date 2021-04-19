@@ -12,7 +12,7 @@
 - [ ] Save/load system
 - [ ] A normal ending 
 ### Downloads
-- [Lastest (linux DEB)](https//leha-code.github.io/AdventButWrong/lastest.deb)
+- [Lastest (linux DEB)](https://leha-code.github.io/AdventButWrong/lastest.deb)
 - [Stable (linux DEB)](https://leha-code.github.io/AdventButWrong/stable.deb)
 - [Source code (ZIP)](https://github.com/leha-code/AdventButWrong/archive/refs/heads/main.zip)
 - [Map (JPG)](https://leha-code.github.io/AdventButWrong/AdventButWrong_map.jpg)
