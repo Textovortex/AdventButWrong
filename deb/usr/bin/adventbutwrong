@@ -1,4 +1,4 @@
 
 set -e
 
-sudo python3 /opt/adventwrong/main.py
+python3 /opt/adventwrong/main.py
