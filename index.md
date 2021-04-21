@@ -15,12 +15,14 @@
 - [Lastest (linux DEB)](https://leha-code.github.io/AdventButWrong/lastest.deb)
 - [Stable (linux DEB)](https://leha-code.github.io/AdventButWrong/stable.deb)
 - [Source code (ZIP)](https://github.com/leha-code/AdventButWrong/archive/refs/heads/main.zip)
-- [Map (JPG)](https://leha-code.github.io/AdventButWrong/AdventButWrong_map.jpg)
+- ![Map (JPG)](https://leha-code.github.io/AdventButWrong/AdventButWrong_map.jpg)
+
+
 ## Repository install (Linux Debian, Raspbian, TwisterOS, and Ubuntu ONLY:
 1. `curl -s https://packagecloud.io/install/repositories/LEHAtupointow/txtadvent/script.deb.sh | sudo bash`
 2. `sudo apt install adventbutwrong`
 
-## Install (Red-Hat Based distributions, Fedora, Red Hat Enterpise Linux, etc.):
+## Install on Red-Hat Based distributions (Fedora, Red Hat Enterpise Linux, etc.):
 1. Install Alien from [Here](http://ftp.de.debian.org/debian/pool/main/a/alien/)
 2. `tar xf alien-VERSION.tar.gz`
 3. `cd alien`
