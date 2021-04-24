@@ -10,9 +10,9 @@ import time
 
 player_name = "Player" # yeah, thats a thing...
 
-player = Player(player_name, 20, 5, ("hit", "punch"), 100, 1)
+player = Player(player_name, 20, [1,3], ["hit", "punch"], 100, 1)
 
-Battle.playet = player
+Battle.player = player
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +67,8 @@ west_anamoklea = Room("You are in the west Anamoklea. To the north there is an o
 
 broken_house = Room("You are in the broken house. There is a eyepop spawner here.")
 
+palace_corridor = Room("This is a corridor leading north and south. There are two doors leading weest and east")
+
 
 
 '''
@@ -110,7 +112,7 @@ eyepop = Character("Eyepop", "An ordinary Eyepop", 10, 5)
 
 palace_guard = Character("A palace guard", "An ordinary human guard", 10, 5)
 
-king = Character("King", "A fat king. Husband of queen Tess", 50, 10)
+king = Character("King", "A fat king. Husband of queen Bess", 50, 10)
 bess = Character("Queen Bess", "Queen Bess, sister of the dead Queen Tess", 100, 15)
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -169,11 +171,12 @@ south_anamoklea.north = north_anamoklea
 
 north_anamoklea.south = south_anamoklea
 
-east_anamoklea.west = west_anamoklea
+east_anamoklea.west = south_anamoklea
 
-west_anamoklea.east = east_anamoklea
+west_anamoklea.east = south_anamoklea
 west_anamoklea.north = broken_house
 
+broken_house.south = west_anamoklea
 
 
 
@@ -184,7 +187,7 @@ west_anamoklea.north = broken_house
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-current_room = west_anamoklea # bruh, why would i start a game in a place like zork, full of clues.
+current_room = white_void # bruh, why would i start a game in a place like zork, full of clues.
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -200,7 +203,7 @@ SYSTEM FUNCTIONS
 '''
 
 def exec_process():
-    global current_room, player_name
+    global current_room, player_name, player
     if current_room == gate:
         say("Guard 1: Hello, stranger, we need a few checks before you can pass.")
         time.sleep(3)
@@ -214,19 +217,30 @@ def exec_process():
         current_room = south_anamoklea
         say("You enter the gate as it shuts behind you.")
         time.sleep(2)
-        look()
+        say(current_room)
     if current_room == broken_house:
         eyepop_battle.start()
         player = eyepop_battle.player
+        eyepop_battle.finished = False
 
 def reset():
+    global current_room
     current_room = white_void
     player.inventory = Bag()
+    player.hp = 20
     print("------------------YOU DIED------------------")
+    look()
 
 '''
 @WHEN Functions
 '''
+
+@when("suicide")
+@when("reset")
+@when("die")
+@when("restart")
+def reset_game():
+    reset()
 
 @when('go DIRECTION') # how did you expect me to make the guy move? Probably not using the queen's carriage...
 def go(direction):
@@ -241,13 +255,13 @@ def go(direction):
         current_room = current_room.south
     else:
         say("You can't go that way") # really? go poop?
-    look() #and another time we look around
+    look() #and another time we look around, recursion, right?
 
 @when('look') # you look everywhere until you type this code: 
 def look():
     global current_room
     say(current_room)
-    exec_process()
+    exec_process() # recursion, right?
 
 @when('scream')
 @when('cry')
