@@ -33,7 +33,7 @@
 8. Play it!
 
 ## Termux install (Download Termux from Google Play)
-1. `pkg update && pkg install root-repo && pkg update && pkg install python`
+1. `pkg update && pkg install root-repo && pkg update && pkg install python wget`
 2. `wget https://textovortex.github.io/AdventButWrong/termux_stable.deb`
 3. `pkg install ./termux_stable.deb`
 4. `adventbutwrong # to run`
