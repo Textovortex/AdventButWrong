@@ -1,4 +1,0 @@
-
-set -e
-
-python3 /opt/adventwrong/main.py
