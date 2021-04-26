@@ -1,0 +1,14 @@
+{
+  "name": "adventbutwrong",
+  "version": "0.0.7prebeta",
+  "homepage": "http://textovortex.github.io/AdventButWrong",
+  "maintainer": "LEHAtupointow <pezleha@gmail.com>",
+  "description": "A port of AdventButWrong to Termux",
+  "arch": "all",
+  "depends": ["python"],
+  "files" :{
+    "lib/python3/adventxtend.py": "lib/python3.9/adventxtend.py",
+    "lib/python3/adstrangerlib.py": "lib/python3.9/adstrangerlib.py",
+    "bin/adventbutwrong": "bin/adventbutwrong"
+  }
+}
