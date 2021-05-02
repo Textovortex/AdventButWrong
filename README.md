@@ -4,7 +4,7 @@ A totally kinda wrong text adventure.
 
 ### Installation
 #### Linux
-See [This](textovortex.github.io/AdventButWrong#repository-install-linux-debian-raspbian-twisteros-and-ubuntu-only)
+See [This](https://textovortex.github.io/AdventButWrong#repository-install-linux-debian-raspbian-twisteros-and-ubuntu-only)
 
 ### Running
 1. Install Python and Git
