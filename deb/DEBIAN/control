@@ -5,5 +5,5 @@ Priority: optional
 Architecture: all
 Essential: no
 Maintainer: Alexey Pavlov <pezleha@gmail.com>
-Description: A kinda wrong text adventure in the style of zork
+Description: A really fun text adventure about defending the kingdom. You will need to click heels.
 Depends: python3
